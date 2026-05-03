@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Vedanth Prasanna Bharadwaj - Backend, Cloud, Data and ML Engineer." />
+  <title>Vedanth Prasanna Bharadwaj | Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 22px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav h2 {
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav ul li a {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 90px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+    }
+
+    .hero h3 {
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: 18px;
+      color: #dbeafe;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      font-size: 1.05rem;
+      color: #e5e7eb;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+    }
+
+    .btn-secondary {
+      border: 1px solid #cbd5e1;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #0f172a;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      color: #0f172a;
+      text-align: center;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      margin: 0 auto 30px;
+      text-align: center;
+      color: #475569;
+      font-size: 1.05rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .card h3 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p,
+    .card li {
+      color: #475569;
+    }
+
+    .metric {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #0284c7;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item {
+      background: white;
+      margin-bottom: 22px;
+      padding: 26px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      border-left: 5px solid #0284c7;
+    }
+
+    .timeline-item h3 {
+      color: #0f172a;
+      margin-bottom: 5px;
+    }
+
+    .timeline-item .meta {
+      color: #64748b;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 26px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .project-card h3 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      background: #e0f2fe;
+      color: #075985;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-box {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      border-radius: 16px;
+    }
+
+    .contact-box h2 {
+      color: white;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .contact-links a {
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      background: #020617;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero h3 {
+        font-size: 1.1rem;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <h2>Vedanth Bharadwaj</h2>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Vedanth Prasanna Bharadwaj</h1>
+      <h3>Backend & Cloud Engineer | Data & ML Engineer</h3>
+      <p>
+        I build scalable backend systems, AWS serverless architectures, data pipelines,
+        dashboards, and machine learning solutions. My work combines cloud engineering,
+        SQL optimization, data observability, and applied ML.
+      </p>
+      <div class="button-group">
+        <a class="btn btn-primary" href="Vedanth_Bharadwaj_Resume.pdf" target="_blank">View Resume</a>
+        <a class="btn btn-secondary" href="https://github.com/vedanthpbharadwaj" target="_blank">GitHub</a>
+        <a class="btn btn-secondary" href="https://linkedin.com/in/vedanth-p-bharadwaj" target="_blank">LinkedIn</a>
+        <a class="btn btn-secondary" href="mailto:vedanthpb1@gmail.com">Email Me</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p class="section-intro">
+        I am a backend, cloud, and data-focused engineer with a Master of Science in Data Science,
+        Analytics & Engineering from Arizona State University. I currently work on production-grade
+        AWS serverless systems at MindSpark, with hands-on experience across AWS Lambda, API Gateway,
+        Step Functions, Aurora PostgreSQL, RDS Data API, AppConfig, SQL optimization, Power BI,
+        and machine learning pipelines.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="metric">~95%</div>
+          <h3>Lambda Latency Reduction</h3>
+          <p>Reduced cold-start latency from 25–30 seconds to 150–200 milliseconds through AppConfig caching and SQL optimization.</p>
+        </div>
+        <div class="card">
+          <div class="metric">75%</div>
+          <h3>DB Round-Trips Reduced</h3>
+          <p>Improved backend efficiency by redesigning database workflows using metadata-driven SQL generation.</p>
+        </div>
+        <div class="card">
+          <div class="metric">41M+</div>
+          <h3>Records Processed</h3>
+          <p>Built a serverless data pipeline for NYC taxi mobility analytics and observability.</p>
+        </div>
+        <div class="card">
+          <div class="metric">97.8%</div>
+          <h3>LSTM Forecast Accuracy</h3>
+          <p>Developed an energy consumption forecasting model with strong time-series performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2>Professional Experience</h2>
+
+      <div class="timeline-item">
+        <h3>AWS Cloud Developer Intern — MindSpark</h3>
+        <p class="meta">Mesa, AZ | February 2026 – Present</p>
+        <ul>
+          <li>Build and optimize serverless backend systems using AWS Lambda, API Gateway, Step Functions, S3, Aurora PostgreSQL, AppConfig, and RDS Data API.</li>
+          <li>Diagnosed and fixed a SaveProject API cold-start bottleneck, reducing latency from 25–30 seconds to 150–200 milliseconds.</li>
+          <li>Re-engineered a legacy UPSERT backend into a metadata-driven INSERT / UPDATE / DELETE SQL engine across 21 tables.</li>
+          <li>Improved query execution time by 60% and reduced database round trips by 75% while preserving transactional integrity.</li>
+          <li>Designed staged Lambda alias deployment workflows across staging, dev, and production environments.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Software Engineer Trainee — Cognizant</h3>
+        <p class="meta">Bengaluru, India | November 2022 – July 2023</p>
+        <ul>
+          <li>Completed an intensive enterprise Java Full Stack training program covering Spring Boot, Angular, REST APIs, SQL, microservices, and AWS architecture.</li>
+          <li>Maintained a 95% average score across 20+ technical assessments in SQL, object-oriented programming, design patterns, and cloud fundamentals.</li>
+          <li>Delivered capstone projects simulating healthcare systems, including relational schema design, API contracts, and integration testing.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <p class="section-intro">
+        Selected projects across cloud engineering, data pipelines, distributed processing, machine learning,
+        computer vision, and business intelligence.
+      </p>
+
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Urban Mobility Data Pipeline</h3>
+          <p>
+            Built an end-to-end AWS serverless Data Observability-as-a-Service platform processing 41M+ NYC taxi records with weather enrichment, validation, feature engineering, and monitoring.
+          </p>
+          <ul>
+            <li>XGBoost ETA prediction achieved R² = 0.905.</li>
+            <li>Demand forecasting achieved R² = 0.91.</li>
+            <li>Power BI dashboards tracked 12+ KPIs across 265 zones.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">AWS Lambda</span>
+            <span class="tag">Step Functions</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">Power BI</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Energy Consumption Forecasting</h3>
+          <p>
+            Built a time-series forecasting pipeline on 1M+ hourly energy records with weather integration and model comparison across classical ML and deep learning methods.
+          </p>
+          <ul>
+            <li>LSTM achieved 97.8% accuracy.</li>
+            <li>Identified peak usage windows 35% above baseline.</li>
+            <li>Recommendations projected 12% operational cost reduction.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">LSTM</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Tableau</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Human Emotion Recognition System</h3>
+          <p>
+            Developed a real-time multimodal emotion recognition system combining facial image classification and audio emotion detection.
+          </p>
+          <ul>
+            <li>Fine-tuned VGG16 transfer learning model with 86.32% accuracy.</li>
+            <li>Built Bi-LSTM audio emotion detection using MFCC, ZCR, and RMSE features.</li>
+            <li>Integrated OpenCV live video and microphone-based audio inference.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">VGG16</span>
+            <span class="tag">CNN</span>
+            <span class="tag">Bi-LSTM</span>
+            <span class="tag">OpenCV</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Indian Sign Language Recognition</h3>
+          <p>
+            Published real-time Indian Sign Language interpreter using hand landmark extraction, sequence modeling, and gesture-to-text translation.
+          </p>
+          <ul>
+            <li>Achieved 97% accuracy on a 7-class gesture recognition task.</li>
+            <li>Built end-to-end OpenCV, MediaPipe, and LSTM pipeline.</li>
+            <li>Published in IJRTI, Volume 7, Issue 6, 2022.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">OpenCV</span>
+            <span class="tag">MediaPipe</span>
+            <span class="tag">LSTM</span>
+            <span class="tag">TensorFlow</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Yelp User Behavior Analysis</h3>
+          <p>
+            Performed distributed user behavior analysis on Yelp data filtered to Home Services businesses in Arizona using Apache Spark and Spark SQL.
+          </p>
+          <ul>
+            <li>Executed 10 Spark SQL queries across reviews, users, and tips.</li>
+            <li>Analyzed sentiment, engagement, compliments, and elite user influence.</li>
+            <li>Created visual insights using Python and Matplotlib.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Apache Spark</span>
+            <span class="tag">Spark SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Parquet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Technical Skills</h2>
+
+      <div class="skills-grid">
+        <div class="card">
+          <h3>Languages</h3>
+          <p>Python, Java, SQL, R, JavaScript, C++</p>
+        </div>
+        <div class="card">
+          <h3>Cloud & Infrastructure</h3>
+          <p>AWS Lambda, API Gateway, S3, Aurora PostgreSQL, DynamoDB, CloudWatch, EventBridge, Step Functions, AppConfig, SQS, SNS</p>
+        </div>
+        <div class="card">
+          <h3>Backend Engineering</h3>
+          <p>REST APIs, Microservices, Spring Boot, RDS Data API, PostgreSQL, MySQL, Git, Serverless Architecture</p>
+        </div>
+        <div class="card">
+          <h3>Data & BI</h3>
+          <p>Power BI, Tableau, ETL Pipelines, Data Observability, Schema Validation, Anomaly Detection, Spark SQL, Parquet</p>
+        </div>
+        <div class="card">
+          <h3>Machine Learning & AI</h3>
+          <p>XGBoost, LSTM, CNN, Bi-LSTM, VGG16, Random Forest, Gradient Boosting, Time-Series Forecasting, Feature Engineering</p>
+        </div>
+        <div class="card">
+          <h3>Libraries & Tools</h3>
+          <p>Pandas, NumPy, Scikit-learn, TensorFlow, Keras, PyTorch, OpenCV, MediaPipe, Matplotlib</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2>Education & Certifications</h2>
+
+      <div class="timeline-item">
+        <h3>Arizona State University — Tempe, AZ</h3>
+        <p class="meta">Master of Science, Data Science, Analytics & Engineering | GPA: 3.9 / 4.0</p>
+        <p>Coursework: Data Processing at Scale, Statistical Machine Learning, Foundations of Software Engineering, Data Mining, Distributed Database Systems.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>B.N.M. Institute of Technology, VTU — Bengaluru, India</h3>
+        <p class="meta">Bachelor of Engineering, Information Science & Engineering | GPA: 8.36 / 10</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Google Data Analytics Professional Certificate</h3>
+          <p>SQL, Tableau, R, Data Cleaning — Google / Coursera</p>
+        </div>
+        <div class="card">
+          <h3>Microsoft Data Analysis and Visualization with Power BI</h3>
+          <p>Power BI, data modeling, reporting, and visualization — Microsoft / Coursera</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="authorization">
+    <div class="container">
+      <h2>Work Authorization</h2>
+      <p class="section-intro">
+        Authorized to work in the United States on F-1 OPT through February 2027.
+        STEM OPT eligible for a 24-month extension, providing approximately three years of total work authorization.
+        H-1B sponsorship will be required thereafter.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Contact</h2>
+        <p>I am open to full-time opportunities in backend engineering, cloud engineering, data engineering, business intelligence, and analytics-focused roles.</p>
+        <div class="contact-links">
+          <a href="mailto:vedanthpb1@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/vedanth-p-bharadwaj" target="_blank">LinkedIn</a>
+          <a href="https://github.com/vedanthpbharadwaj" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Vedanth Prasanna Bharadwaj. Built with HTML and CSS for GitHub Pages.</p>
+  </footer>
+</body>
+</html>
